@@ -7,7 +7,7 @@ const { useState: useStateP2 } = React;
 function LocationsPage({ navigate }) {
   return (
     <div className="page-fade">
-      <section className="page-hero" style={{ backgroundImage: "url('img/storefront-night.jpg')" }}>
+      <section className="page-hero" style={{ backgroundImage: "url('img/storefront-night.webp')" }}>
         <div className="container">
           <p className="eyebrow eyebrow-cream">— Visit</p>
           <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>{SHOP.neighborhood},<br/>{SHOP.city}.</h1>
@@ -88,7 +88,7 @@ function LocationsPage({ navigate }) {
               <p className="lede" style={{ marginTop: 16 }}>Free lot parking right out front — usually a spot within ten feet of the door. Five minutes off I-405 (Exit 20A). The {SHOP.shortName} sign is on the strip mall facing 100th Ave NE; the barber pole is unmistakable at night.</p>
               <p className="lede" style={{ marginTop: 16 }}>King County Metro Route 234 stops two blocks south at Juanita Village.</p>
             </div>
-            <div className="split-img" style={{ backgroundImage: "url('img/storefront-night.jpg')", aspectRatio: "4 / 3" }} />
+            <div className="split-img" style={{ backgroundImage: "url('img/storefront-night.webp')", aspectRatio: "4 / 3" }} />
           </div>
         </div>
       </section>

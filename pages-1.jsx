@@ -7,7 +7,7 @@ const { useState: useStateP } = React;
 function ServicesPage({ navigate }) {
   return (
     <div className="page-fade">
-      <section className="page-hero" style={{ backgroundImage: "url('img/cut-fade-1.jpg')" }}>
+      <section className="page-hero" style={{ backgroundImage: "url('img/cut-fade-1.webp')" }}>
         <div className="container">
           <p className="eyebrow eyebrow-cream">— Services & Pricing</p>
           <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>The full menu.</h1>
@@ -79,7 +79,7 @@ function ServicesPage({ navigate }) {
 function AboutPage({ navigate }) {
   return (
     <div className="page-fade">
-      <section className="page-hero" style={{ backgroundImage: "url('img/tony-at-work.jpg')" }}>
+      <section className="page-hero" style={{ backgroundImage: "url('img/tony-at-work.webp')" }}>
         <div className="container">
           <p className="eyebrow eyebrow-cream">— Our story</p>
           <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>One chair.<br/>Thirty years.<br/>One block from where you live.</h1>
@@ -89,7 +89,7 @@ function AboutPage({ navigate }) {
 
       <section className="section-pad-sm">
         <div className="container">
-          <div className="about-hero-img" style={{ backgroundImage: "url('img/interior-chairs.jpg')" }} />
+          <div className="about-hero-img" style={{ backgroundImage: "url('img/interior-chairs.webp')" }} />
         </div>
       </section>
 

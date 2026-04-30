@@ -20,7 +20,7 @@ function FAQPage({ navigate }) {
   const [openIdx, setOpenIdx] = useStateP3(0);
   return (
     <div className="page-fade">
-      <section className="page-hero" style={{ backgroundImage: "url('img/interior-chairs.jpg')" }}>
+      <section className="page-hero" style={{ backgroundImage: "url('img/interior-chairs.webp')" }}>
         <div className="container">
           <p className="eyebrow eyebrow-cream">— FAQ</p>
           <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>Questions,<br/>answered.</h1>
