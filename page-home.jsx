@@ -8,7 +8,7 @@ function HomePage({ navigate }) {
     <div className="page-fade">
       {/* HERO */}
       <section className="hero">
-        <div className="hero-img" style={{ backgroundImage: "url('img/shave-portrait.webp')" }} />
+        <div className="hero-img" style={{ backgroundImage: "url('img/r.webp')" }} />
         <div className="hero-content container">
           <div className="hero-meta-row" style={{ marginBottom: 24 }}>
             <span><span className="live-dot"></span>Open now · until 7pm</span>
