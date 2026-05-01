@@ -91,11 +91,11 @@ function BookPage({ navigate }) {
         <div className="container" style={{ maxWidth: 800 }}>
           {/* Stepper */}
           <div style={{ display: "flex", gap: 8, marginBottom: 32, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-            {["Service", "Barber & Time", "Confirm"].map((label, i) => {
+            {["Service", "Schedule", "Confirm"].map((label, i) => {
               const n = i + 1;
               const active = step >= n;
               return (
-                <div key={label} style={{ flex: 1, padding: "12px 16px", background: active ? "var(--ink)" : "var(--bg-cream)", color: active ? "var(--bg)" : "var(--muted)", borderRadius: 4 }}>
+                <div key={label} style={{ flex: 1, padding: "12px 10px", background: active ? "var(--ink)" : "var(--bg-cream)", color: active ? "var(--bg)" : "var(--muted)", borderRadius: 4, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                   {String(n).padStart(2, "0")} · {label}
                 </div>
               );
