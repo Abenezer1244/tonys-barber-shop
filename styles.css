@@ -160,7 +160,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 .nav-desktop {
   display: none;
-  gap: 4px;
+  gap: 16px;
 }
 @media (min-width: 1000px) { .nav-desktop { display: flex; } }
 .nav-link {
