@@ -1,4 +1,4 @@
-/* global React, SHOP, Icon */
+/* global React */
 const { useState: useStateP2 } = React;
 
 // ============================================================
@@ -10,7 +10,7 @@ function LocationsPage({ navigate }) {
       <section className="page-hero" style={{ backgroundImage: "url('img/storefront-night.webp')" }}>
         <div className="container">
           <p className="eyebrow eyebrow-cream">— Visit</p>
-          <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>{SHOP.neighborhood},<br/>{SHOP.city}.</h1>
+          <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>{window.SHOP.neighborhood},<br/>{window.SHOP.city}.</h1>
           <p className="lede">One shop. One barber pole out front. Easy parking, no appointment needed if there's a chair open.</p>
         </div>
       </section>
@@ -43,27 +43,27 @@ function LocationsPage({ navigate }) {
               <h3 className="display h3" style={{ color: "var(--bg)", margin: "8px 0 8px" }}>Tony's Barber Shop</h3>
 
               <div className="contact-row">
-                <span className="contact-row-icon"><Icon name="pin" size={16} /></span>
+                <span className="contact-row-icon"><window.Icon name="pin" size={16} /></span>
                 <div>
                   <div className="contact-row-label">Address</div>
-                  <div className="contact-row-value">{SHOP.street}, {SHOP.suite}<br/>{SHOP.city}, {SHOP.state} {SHOP.zip}</div>
+                  <div className="contact-row-value">{window.SHOP.street}, {window.SHOP.suite}<br/>{window.SHOP.city}, {window.SHOP.state} {window.SHOP.zip}</div>
                 </div>
               </div>
 
               <div className="contact-row">
-                <span className="contact-row-icon"><Icon name="phone" size={16} /></span>
+                <span className="contact-row-icon"><window.Icon name="phone" size={16} /></span>
                 <div>
                   <div className="contact-row-label">Phone</div>
-                  <a href={`tel:${SHOP.phoneRaw}`} className="contact-row-value" style={{ color: "var(--brass)" }}>{SHOP.phone}</a>
+                  <a href={`tel:${window.SHOP.phoneRaw}`} className="contact-row-value" style={{ color: "var(--brass)" }}>{window.SHOP.phone}</a>
                 </div>
               </div>
 
               <div className="contact-row">
-                <span className="contact-row-icon"><Icon name="clock" size={16} /></span>
+                <span className="contact-row-icon"><window.Icon name="clock" size={16} /></span>
                 <div style={{ flex: 1 }}>
                   <div className="contact-row-label">Hours</div>
                   <div className="hours-grid" style={{ marginTop: 8 }}>
-                    {SHOP.hours.map((h) => (
+                    {window.SHOP.hours.map((h) => (
                       <React.Fragment key={h.day}>
                         <span className="day">{h.day}</span>
                         <span className={h.closed ? "closed" : ""}>{h.time}</span>
@@ -74,7 +74,7 @@ function LocationsPage({ navigate }) {
               </div>
 
               <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-                <a className="btn btn-primary" href={`tel:${SHOP.phoneRaw}`}>Call</a>
+                <a className="btn btn-primary" href={`tel:${window.SHOP.phoneRaw}`}>Call</a>
                 <a className="btn btn-ghost-light">Get Directions</a>
                 <button className="btn btn-ghost-light" onClick={() => navigate("book")}>Book Online</button>
               </div>
@@ -85,7 +85,7 @@ function LocationsPage({ navigate }) {
             <div>
               <p className="eyebrow">— Parking & getting here</p>
               <h2 className="display h3" style={{ marginTop: 8 }}>Easy in, easy out.</h2>
-              <p className="lede" style={{ marginTop: 16 }}>Free lot parking right out front — usually a spot within ten feet of the door. Five minutes off I-405 (Exit 20A). The {SHOP.shortName} sign is on the strip mall facing 100th Ave NE; the barber pole is unmistakable at night.</p>
+              <p className="lede" style={{ marginTop: 16 }}>Free lot parking right out front — usually a spot within ten feet of the door. Five minutes off I-405 (Exit 20A). The {window.SHOP.shortName} sign is on the strip mall facing 100th Ave NE; the barber pole is unmistakable at night.</p>
               <p className="lede" style={{ marginTop: 16 }}>King County Metro Route 234 stops two blocks south at Juanita Village.</p>
             </div>
             <div className="split-img" style={{ backgroundImage: "url('img/storefront-night.webp')", aspectRatio: "4 / 3" }} />

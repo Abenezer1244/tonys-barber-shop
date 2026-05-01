@@ -1,4 +1,4 @@
-/* global React, SHOP, Icon */
+/* global React */
 const { useState: useStateChrome, useEffect: useEffectChrome } = React;
 
 // ============================================================
@@ -28,7 +28,7 @@ function Header({ page, navigate, onDark = false }) {
         <div className="header-inner">
           <div className="logo" onClick={() => go("home")}>
             <span className="logo-mark" aria-hidden="true"></span>
-            <span>{SHOP.shortName}</span>
+            <span>{window.SHOP.shortName}</span>
           </div>
 
           <nav className="nav-desktop" aria-label="Primary">
@@ -38,12 +38,12 @@ function Header({ page, navigate, onDark = false }) {
           </nav>
 
           <div className="header-cta">
-            <a className="phone-link" href={`tel:${SHOP.phoneRaw}`}>
-              <Icon name="phone" size={14} /> {SHOP.phone}
+            <a className="phone-link" href={`tel:${window.SHOP.phoneRaw}`}>
+              <window.Icon name="phone" size={14} /> {window.SHOP.phone}
             </a>
             <button className="btn btn-primary btn-sm" onClick={() => go("book")}>Book Now</button>
             <button className="hamburger" aria-label="Menu" onClick={() => setMobileOpen(true)}>
-              <Icon name="menu" size={20} />
+              <window.Icon name="menu" size={20} />
             </button>
           </div>
         </div>
@@ -53,7 +53,7 @@ function Header({ page, navigate, onDark = false }) {
       <div className={`mobile-menu-backdrop ${mobileOpen ? "open" : ""}`} onClick={() => setMobileOpen(false)} />
       <aside className={`mobile-menu ${mobileOpen ? "open" : ""}`} aria-hidden={!mobileOpen}>
         <button className="mobile-menu-close" aria-label="Close" onClick={() => setMobileOpen(false)}>
-          <Icon name="x" size={20} />
+          <window.Icon name="x" size={20} />
         </button>
         {[...links, ["gift-cards", "Gift Cards"]].map(([id, label]) => (
           <a key={id} className="mobile-nav-link" onClick={() => go(id)}>
@@ -63,8 +63,8 @@ function Header({ page, navigate, onDark = false }) {
         ))}
         <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 12 }}>
           <button className="btn btn-primary btn-lg" onClick={() => go("book")}>Book Now</button>
-          <a className="btn btn-ghost-dark" href={`tel:${SHOP.phoneRaw}`}>
-            <Icon name="phone" size={14} /> {SHOP.phone}
+          <a className="btn btn-ghost-dark" href={`tel:${window.SHOP.phoneRaw}`}>
+            <window.Icon name="phone" size={14} /> {window.SHOP.phone}
           </a>
         </div>
       </aside>
@@ -95,14 +95,14 @@ function Footer({ navigate }) {
           <div>
             <p className="footer-tagline">Quality cuts.<br/>No drama.</p>
             <p style={{ color: "rgba(244,237,227,0.7)", fontSize: 14, margin: 0, maxWidth: 32 + "ch" }}>
-              {SHOP.street}, {SHOP.suite}<br/>
-              {SHOP.city}, {SHOP.state} {SHOP.zip}<br/>
-              <a href={`tel:${SHOP.phoneRaw}`} style={{ color: "var(--brass)" }}>{SHOP.phone}</a>
+              {window.SHOP.street}, {window.SHOP.suite}<br/>
+              {window.SHOP.city}, {window.SHOP.state} {window.SHOP.zip}<br/>
+              <a href={`tel:${window.SHOP.phoneRaw}`} style={{ color: "var(--brass)" }}>{window.SHOP.phone}</a>
             </p>
             <div className="social-row" style={{ marginTop: 20 }}>
-              <a className="social-icon" aria-label="Instagram"><Icon name="ig" size={16} /></a>
-              <a className="social-icon" aria-label="Facebook"><Icon name="fb" size={16} /></a>
-              <a className="social-icon" aria-label="Google"><Icon name="google" size={16} /></a>
+              <a className="social-icon" aria-label="Instagram"><window.Icon name="ig" size={16} /></a>
+              <a className="social-icon" aria-label="Facebook"><window.Icon name="fb" size={16} /></a>
+              <a className="social-icon" aria-label="Google"><window.Icon name="google" size={16} /></a>
             </div>
           </div>
 
@@ -136,8 +136,8 @@ function Footer({ navigate }) {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 {SHOP.name}. All rights reserved.</span>
-          <span>Built in {SHOP.city}, {SHOP.state}</span>
+          <span>© 2026 {window.SHOP.name}. All rights reserved.</span>
+          <span>Built in {window.SHOP.city}, {window.SHOP.state}</span>
         </div>
       </div>
     </footer>

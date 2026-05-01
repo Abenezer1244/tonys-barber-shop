@@ -1,4 +1,4 @@
-/* global React, SHOP, Icon */
+/* global React */
 const { useState: useStateP3 } = React;
 
 // ============================================================
@@ -24,7 +24,7 @@ function FAQPage({ navigate }) {
         <div className="container">
           <p className="eyebrow eyebrow-cream">— FAQ</p>
           <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>Questions,<br/>answered.</h1>
-          <p className="lede">If your question isn't here, call us at <a href={`tel:${SHOP.phoneRaw}`} style={{ color: "var(--brass)" }}>{SHOP.phone}</a> — Tony or whoever's at the front desk will pick up.</p>
+          <p className="lede">If your question isn't here, call us at <a href={`tel:${window.SHOP.phoneRaw}`} style={{ color: "var(--brass)" }}>{window.SHOP.phone}</a> — Tony or whoever's at the front desk will pick up.</p>
         </div>
       </section>
 
@@ -52,7 +52,7 @@ function FAQPage({ navigate }) {
           <p className="lede" style={{ margin: "16px auto 24px" }}>Easiest way to find out is to come in.</p>
           <div style={{ display: "inline-flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <button className="btn btn-primary btn-lg" onClick={() => navigate("book")}>Book a Cut</button>
-            <a className="btn btn-ghost-dark btn-lg" href={`tel:${SHOP.phoneRaw}`}><Icon name="phone" size={14} /> Call the Shop</a>
+            <a className="btn btn-ghost-dark btn-lg" href={`tel:${window.SHOP.phoneRaw}`}><window.Icon name="phone" size={14} /> Call the Shop</a>
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@ function BookPage({ navigate }) {
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                       <span className="price" style={{ fontSize: 18 }}>${s.price}</span>
-                      <Icon name="arrow" size={16} />
+                      <window.Icon name="arrow" size={16} />
                     </div>
                   </button>
                 ))}
@@ -146,7 +146,7 @@ function BookPage({ navigate }) {
               </div>
               <div style={{ display: "flex", gap: 8 }}>
                 <button className="btn btn-ghost-dark" onClick={() => setStep(1)}>Back</button>
-                <button className="btn btn-primary btn-lg" onClick={() => setStep(3)}>Continue <Icon name="arrow" size={14} /></button>
+                <button className="btn btn-primary btn-lg" onClick={() => setStep(3)}>Continue <window.Icon name="arrow" size={14} /></button>
               </div>
             </div>
           )}
@@ -160,7 +160,7 @@ function BookPage({ navigate }) {
                   <span style={{ color: "var(--muted)", textTransform: "uppercase", fontSize: 11, letterSpacing: "0.12em" }}>Barber</span><span>{picked.barber}</span>
                   <span style={{ color: "var(--muted)", textTransform: "uppercase", fontSize: 11, letterSpacing: "0.12em" }}>Date</span><span>{picked.date}</span>
                   <span style={{ color: "var(--muted)", textTransform: "uppercase", fontSize: 11, letterSpacing: "0.12em" }}>Time</span><span>{picked.time}</span>
-                  <span style={{ color: "var(--muted)", textTransform: "uppercase", fontSize: 11, letterSpacing: "0.12em" }}>Where</span><span>{SHOP.street}, {SHOP.suite}</span>
+                  <span style={{ color: "var(--muted)", textTransform: "uppercase", fontSize: 11, letterSpacing: "0.12em" }}>Where</span><span>{window.SHOP.street}, {window.SHOP.suite}</span>
                 </div>
               </div>
               <div style={{ display: "grid", gap: 12, marginBottom: 24 }}>
@@ -171,7 +171,7 @@ function BookPage({ navigate }) {
               <p style={{ fontSize: 12, color: "var(--muted)", marginBottom: 24 }}>Card on file required. We charge 50% for cancellations inside 24 hours and 100% for no-shows. <a onClick={() => navigate("faq")} style={{ borderBottom: "1px solid var(--brass)", cursor: "pointer" }}>Full policy</a>.</p>
               <div style={{ display: "flex", gap: 8 }}>
                 <button className="btn btn-ghost-dark" onClick={() => setStep(2)}>Back</button>
-                <button className="btn btn-primary btn-lg" onClick={() => alert("Demo — booking confirmed.")}>Confirm Appointment <Icon name="arrow" size={14} /></button>
+                <button className="btn btn-primary btn-lg" onClick={() => alert("Demo — booking confirmed.")}>Confirm Appointment <window.Icon name="arrow" size={14} /></button>
               </div>
             </div>
           )}

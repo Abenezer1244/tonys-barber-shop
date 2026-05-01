@@ -1,4 +1,4 @@
-/* global React, SHOP, SERVICES_FULL, TEAM, Icon */
+/* global React */
 const { useState: useStateP } = React;
 
 // ============================================================
@@ -40,12 +40,12 @@ function ServicesPage({ navigate }) {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 24, alignItems: "flex-start" }}>
               <div className="flagship-price-block">$65<small>60 minutes · book any barber</small></div>
-              <button className="btn btn-primary btn-lg" onClick={() => navigate("book")}>Book the Signature <Icon name="arrow" size={14} /></button>
+              <button className="btn btn-primary btn-lg" onClick={() => navigate("book")}>Book the Signature <window.Icon name="arrow" size={14} /></button>
             </div>
           </div>
 
           {/* Categories */}
-          {SERVICES_FULL.map((cat) => (
+          {window.SERVICES_FULL.map((cat) => (
             <div className="svc-category" key={cat.cat}>
               <div className="svc-cat-head">
                 <p className="eyebrow">— {String(cat.cat.split(" ")[0]).toLowerCase()}</p>
@@ -83,7 +83,7 @@ function AboutPage({ navigate }) {
         <div className="container">
           <p className="eyebrow eyebrow-cream">— Our story</p>
           <h1 className="display h1" style={{ color: "var(--bg)", marginTop: 12 }}>One chair.<br/>Thirty years.<br/>One block from where you live.</h1>
-          <p className="lede">Tony's is a {SHOP.neighborhood}-{SHOP.city} barbershop run by a barber, not a brand. We opened in 2023 to do one thing well: cut hair the way it's supposed to be cut.</p>
+          <p className="lede">Tony's is a {window.SHOP.neighborhood}-{window.SHOP.city} barbershop run by a barber, not a brand. We opened in 2023 to do one thing well: cut hair the way it's supposed to be cut.</p>
         </div>
       </section>
 
