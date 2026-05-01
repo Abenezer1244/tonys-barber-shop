@@ -38,9 +38,6 @@ function Header({ page, navigate, onDark = false }) {
           </nav>
 
           <div className="header-cta">
-            <a className="phone-link" href={`tel:${window.SHOP.phoneRaw}`}>
-              <window.Icon name="phone" size={14} /> {window.SHOP.phone}
-            </a>
             <button className="btn btn-primary btn-sm" onClick={() => go("book")}>Book Now</button>
             <button className="hamburger" aria-label="Menu" onClick={() => setMobileOpen(true)}>
               <window.Icon name="menu" size={20} />
