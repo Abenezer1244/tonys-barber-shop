@@ -197,6 +197,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 @media (min-width: 1000px) { .hamburger { display: none; } }
 .on-dark .hamburger { background: transparent; border-color: rgba(244,237,227,0.2); color: var(--bg); }
 
+@media (max-width: 999px) { .header-book-btn { display: none; } }
+
 /* Mobile menu */
 .mobile-menu-backdrop {
   position: fixed; inset: 0; background: rgba(26,20,16,0.4); z-index: 100;
@@ -326,8 +328,38 @@ section { position: relative; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(244,237,227,0.7);
+  margin-bottom: 24px;
 }
 .hero-meta-row .dot { color: var(--brass); }
+
+/* Mobile hero: spread content top↔bottom instead of cramming at bottom */
+@media (max-width: 899px) {
+  .hero-img::after {
+    background:
+      linear-gradient(180deg, rgba(26,20,16,0.65) 0%, rgba(26,20,16,0.15) 42%, rgba(26,20,16,0.82) 82%, rgba(26,20,16,0.95) 100%),
+      linear-gradient(90deg, rgba(26,20,16,0.45) 0%, rgba(26,20,16,0) 100%);
+  }
+  .hero-content {
+    justify-content: space-between;
+    padding-top: 72px;
+  }
+  .hero-meta-row {
+    margin-bottom: 0;
+  }
+  .hero-side-card {
+    display: none;
+  }
+  .hero-tagline {
+    font-size: clamp(72px, 22vw, 120px);
+  }
+  .hero-sub {
+    margin-top: 14px;
+    font-size: 15px;
+  }
+  .hero-cta-row {
+    margin-top: 22px;
+  }
+}
 .live-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: oklch(0.72 0.18 145);

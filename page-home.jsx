@@ -10,7 +10,7 @@ function HomePage({ navigate }) {
       <section className="hero">
         <div className="hero-img" style={{ backgroundImage: "url('img/r.webp')" }} />
         <div className="hero-content container">
-          <div className="hero-meta-row" style={{ marginBottom: 24 }}>
+          <div className="hero-meta-row">
             <span><span className="live-dot"></span>Open now · until 7pm</span>
             <span className="dot">●</span>
             <span>{window.SHOP.city}, {window.SHOP.state} · {window.SHOP.neighborhood}</span>

@@ -38,7 +38,7 @@ function Header({ page, navigate, onDark = false }) {
           </nav>
 
           <div className="header-cta">
-            <button className="btn btn-primary btn-sm" onClick={() => go("book")}>Book Now</button>
+            <button className="btn btn-primary btn-sm header-book-btn" onClick={() => go("book")}>Book Now</button>
             <button className="hamburger" aria-label="Menu" onClick={() => setMobileOpen(true)}>
               <window.Icon name="menu" size={20} />
             </button>
