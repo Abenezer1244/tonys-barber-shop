@@ -53,7 +53,7 @@ function HomePage({ navigate }) {
                 <div className="row-2">
                   <div>
                     <label>Date</label>
-                    <input className="field" type="date" defaultValue={new Date().toISOString().split("T")[0]} min={new Date().toISOString().split("T")[0]} />
+                    <input className="field" type="date" defaultValue={(() => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); })()} min={(() => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); })()} />
                   </div>
                   <div>
                     <label>Time</label>
@@ -199,9 +199,9 @@ function HomePage({ navigate }) {
               "img/storefront-night.webp", "img/cut-fade-1.webp", "img/cut-fade-2.webp",
               "img/cut-textured.webp", "img/shave-portrait.webp", "img/interior-chairs.webp",
             ].map((src, i) => (
-              <div className="gallery-tile" key={i} style={{ backgroundImage: `url('${src}')` }}>
+              <a className="gallery-tile" key={i} href="https://www.instagram.com/TonysBarberShop/" target="_blank" rel="noopener noreferrer" aria-label={`View photo ${i + 1} on Instagram`} style={{ backgroundImage: `url('${src}')` }}>
                 <span className="ig"><window.Icon name="ig" size={14} /></span>
-              </div>
+              </a>
             ))}
           </div>
         </div>
