@@ -53,7 +53,7 @@ function HomePage({ navigate }) {
                 <div className="row-2">
                   <div>
                     <label>Date</label>
-                    <input className="field" type="date" defaultValue="2026-05-02" />
+                    <input className="field" type="date" defaultValue={new Date().toISOString().split("T")[0]} min={new Date().toISOString().split("T")[0]} />
                   </div>
                   <div>
                     <label>Time</label>
