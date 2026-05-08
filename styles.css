@@ -522,6 +522,8 @@ section { position: relative; }
   font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--ink); border-bottom: 1.5px solid var(--brass); padding-bottom: 2px;
   cursor: pointer;
+  display: inline-flex; align-items: center;
+  min-height: 44px; padding-top: 10px; padding-bottom: 10px;
 }
 .book-link:hover { color: var(--brass-deep); }
 .flagship-tag {
