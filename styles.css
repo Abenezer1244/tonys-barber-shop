@@ -1038,6 +1038,14 @@ html, body { overflow-x: hidden; }
 }
 .btn:focus-visible { outline-offset: 4px; }
 
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .live-dot { animation: none; box-shadow: none; }
+  .page-fade { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
 /* iOS safe-area for book bar */
 .book-bar {
   bottom: calc(12px + env(safe-area-inset-bottom, 0px));
