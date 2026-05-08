@@ -33,7 +33,7 @@ function FAQPage({ navigate }) {
           <div className="faq-list">
             {FAQS.map((f, i) => (
               <div key={i} className={`faq-item ${openIdx === i ? "open" : ""}`}>
-                <div className="faq-q" onClick={() => setOpenIdx(openIdx === i ? -1 : i)}>
+                <div className="faq-q" role="button" tabIndex={0} onClick={() => setOpenIdx(openIdx === i ? -1 : i)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setOpenIdx(openIdx === i ? -1 : i)}>
                   <span>{f.q}</span>
                   <span className="icon">+</span>
                 </div>
@@ -63,9 +63,25 @@ function FAQPage({ navigate }) {
 // ============================================================
 // BOOKING PAGE (simple flow)
 // ============================================================
+function getUpcomingDates(count) {
+  const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const dates = [];
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  while (dates.length < count) {
+    d.setDate(d.getDate() + 1);
+    if (d.getDay() !== 2) { // skip Tuesday (closed)
+      dates.push(`${DAY_NAMES[d.getDay()]}, ${MONTH_NAMES[d.getMonth()]} ${d.getDate()}`);
+    }
+  }
+  return dates;
+}
+
 function BookPage({ navigate }) {
   const [step, setStep] = useStateP3(1);
-  const [picked, setPicked] = useStateP3({ service: "Signature Cut", barber: "Any available", date: "Sat, May 2", time: "10:30 AM" });
+  const upcomingDates = getUpcomingDates(5);
+  const [picked, setPicked] = useStateP3({ service: "Signature Cut", barber: "Any available", date: upcomingDates[0], time: "10:30 AM" });
 
   const services = [
     { name: "The Signature Cut", price: 65, dur: "60 min" },
@@ -134,7 +150,7 @@ function BookPage({ navigate }) {
               </div>
               <p className="eyebrow" style={{ marginBottom: 12 }}>— Date</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 32 }}>
-                {["Fri, May 1", "Sat, May 2", "Sun, May 3", "Mon, May 4", "Wed, May 6"].map((d) => (
+                {upcomingDates.map((d) => (
                   <button key={d} className={`btn btn-sm ${picked.date === d ? "btn-dark" : "btn-ghost-dark"}`} onClick={() => setPicked({ ...picked, date: d })}>{d}</button>
                 ))}
               </div>
@@ -163,10 +179,19 @@ function BookPage({ navigate }) {
                   <span style={{ color: "var(--muted)", textTransform: "uppercase", fontSize: 11, letterSpacing: "0.12em" }}>Where</span><span>{window.SHOP.street}, {window.SHOP.suite}</span>
                 </div>
               </div>
-              <div style={{ display: "grid", gap: 12, marginBottom: 24 }}>
-                <input className="field" style={{ padding: 14, border: "1px solid var(--line)", borderRadius: 4, fontSize: 15 }} placeholder="Your name" />
-                <input className="field" style={{ padding: 14, border: "1px solid var(--line)", borderRadius: 4, fontSize: 15 }} placeholder="Phone — for confirmation text" />
-                <input className="field" style={{ padding: 14, border: "1px solid var(--line)", borderRadius: 4, fontSize: 15 }} placeholder="Email" />
+              <div style={{ display: "grid", gap: 16, marginBottom: 24 }}>
+                <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>Your name</span>
+                  <input className="field" style={{ padding: 14, border: "1px solid var(--line)", borderRadius: 4, fontSize: 15 }} placeholder="e.g. Marcus Rivera" />
+                </label>
+                <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>Phone</span>
+                  <input className="field" type="tel" style={{ padding: 14, border: "1px solid var(--line)", borderRadius: 4, fontSize: 15 }} placeholder="(425) 000-0000 — for confirmation text" />
+                </label>
+                <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>Email</span>
+                  <input className="field" type="email" style={{ padding: 14, border: "1px solid var(--line)", borderRadius: 4, fontSize: 15 }} placeholder="you@email.com" />
+                </label>
               </div>
               <p style={{ fontSize: 12, color: "var(--muted)", marginBottom: 24 }}>Card on file required. We charge 50% for cancellations inside 24 hours and 100% for no-shows. <a onClick={() => navigate("faq")} style={{ borderBottom: "1px solid var(--brass)", cursor: "pointer" }}>Full policy</a>.</p>
               <div style={{ display: "flex", gap: 8 }}>
