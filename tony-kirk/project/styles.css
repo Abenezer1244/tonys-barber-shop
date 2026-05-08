@@ -1,12 +1,12 @@
 /* Tony's Barber Shop — design tokens & base styles */
 :root {
-  --bg: #f4ede3;
-  --bg-cream: #ede4d3;
+  --bg: #ffffff;
+  --bg-cream: #f2ece2;
   --ink: #1a1410;
   --ink-2: #2b211a;
   --ink-soft: #4a3d33;
   --muted: #7a6e62;
-  --line: #d9cdb8;
+  --line: #c8bba8;
   --line-dark: #2b211a;
   --brass: oklch(0.72 0.13 65);
   --brass-deep: oklch(0.62 0.13 60);
@@ -109,10 +109,10 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .btn-dark:hover { background: #000; }
 .btn-ghost-light {
   background: transparent;
-  color: var(--bg);
-  border: 1px solid rgba(244,237,227,0.5);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.45);
 }
-.btn-ghost-light:hover { background: rgba(244,237,227,0.1); border-color: var(--bg); }
+.btn-ghost-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.8); }
 .btn-ghost-dark {
   background: transparent;
   color: var(--ink);
@@ -125,7 +125,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(244,237,227,0.92);
+  background: rgba(255,255,255,0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
@@ -154,7 +154,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .logo-mark {
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #e63946 0%, #e63946 33%, #f4ede3 33%, #f4ede3 66%, #1d3557 66%);
+  background: linear-gradient(180deg, #e63946 0%, #e63946 33%, #ffffff 33%, #ffffff 66%, #1d3557 66%);
   border: 2px solid var(--ink);
   flex-shrink: 0;
 }
@@ -500,8 +500,9 @@ section { position: relative; }
   overflow: hidden;
   display: flex; flex-direction: column;
   transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: var(--shadow-card);
 }
-.service-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 2px 0 rgba(26,20,16,0.04), 0 12px 32px -8px rgba(26,20,16,0.22); }
 .service-card-img {
   aspect-ratio: 4 / 3;
   background-size: cover; background-position: center;
@@ -619,6 +620,7 @@ section { position: relative; }
   border-radius: var(--radius-lg);
   padding: 24px;
   display: flex; flex-direction: column; gap: 12px;
+  box-shadow: var(--shadow-card);
 }
 .review-stars { color: var(--brass-deep); letter-spacing: 0.05em; font-size: 14px; }
 .review-quote { font-size: 15px; color: var(--ink-2); margin: 0; line-height: 1.55; }
@@ -835,6 +837,7 @@ section { position: relative; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex; flex-direction: column;
+  box-shadow: var(--shadow-card);
 }
 .team-card-img {
   aspect-ratio: 4 / 5;
@@ -866,6 +869,7 @@ section { position: relative; }
   padding: 32px;
   display: flex; flex-direction: column; gap: 16px;
   position: relative;
+  box-shadow: var(--shadow-card);
 }
 .plan-card.featured { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .plan-card.featured .plan-tag { background: var(--brass); color: var(--ink); }
@@ -893,6 +897,7 @@ section { position: relative; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
 }
 .compare-table th, .compare-table td {
   padding: 16px 20px;
@@ -969,7 +974,7 @@ section { position: relative; }
   grid-template-columns: 1fr;
 }
 @media (min-width: 700px) { .timeline { grid-template-columns: repeat(3, 1fr); } }
-.timeline-item { padding: 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.timeline-item { padding: 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
 .timeline-year { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass-deep); margin-bottom: 12px; }
 .timeline-item h3 { font-family: var(--font-display); font-size: 24px; letter-spacing: 0.01em; text-transform: uppercase; margin: 0 0 8px; }
 .timeline-item p { font-size: 14px; color: var(--ink-soft); margin: 0; }
@@ -993,6 +998,7 @@ section { position: relative; }
   padding: 28px;
   display: grid; gap: 16px;
   grid-template-columns: 1fr;
+  box-shadow: var(--shadow-card);
 }
 @media (min-width: 700px) { .role-card { grid-template-columns: 1fr auto; align-items: center; } }
 .role-card h3 { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.01em; text-transform: uppercase; margin: 0 0 4px; }
