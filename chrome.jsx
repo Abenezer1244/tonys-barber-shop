@@ -33,7 +33,7 @@ function Header({ page, navigate, onDark = false }) {
 
           <nav className="nav-desktop" aria-label="Primary">
             {links.map(([id, label]) => (
-              <a key={id} className={`nav-link ${page === id ? "active" : ""}`} onClick={() => go(id)}>{label}</a>
+              <a key={id} className={`nav-link ${page === id ? "active" : ""}`} role="button" tabIndex={0} onClick={() => go(id)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && go(id)}>{label}</a>
             ))}
           </nav>
 
@@ -53,7 +53,7 @@ function Header({ page, navigate, onDark = false }) {
           <window.Icon name="x" size={20} />
         </button>
         {[...links, ["gift-cards", "Gift Cards"]].map(([id, label]) => (
-          <a key={id} className="mobile-nav-link" onClick={() => go(id)}>
+          <a key={id} className="mobile-nav-link" role="button" tabIndex={0} onClick={() => go(id)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && go(id)}>
             <span>{label}</span>
             <span className="arrow">→</span>
           </a>
@@ -106,24 +106,24 @@ function Footer({ navigate }) {
           <div>
             <h4>Visit</h4>
             <ul>
-              <li><a onClick={() => navigate("services")}>Services & Pricing</a></li>
-              <li><a onClick={() => navigate("locations")}>Hours & Directions</a></li>
-              <li><a onClick={() => navigate("about")}>Our Story</a></li>
+              <li><a role="button" tabIndex={0} onClick={() => navigate("services")} onKeyDown={(e) => (e.key==="Enter"||e.key===" ")&&navigate("services")}>Services & Pricing</a></li>
+              <li><a role="button" tabIndex={0} onClick={() => navigate("locations")} onKeyDown={(e) => (e.key==="Enter"||e.key===" ")&&navigate("locations")}>Hours & Directions</a></li>
+              <li><a role="button" tabIndex={0} onClick={() => navigate("about")} onKeyDown={(e) => (e.key==="Enter"||e.key===" ")&&navigate("about")}>Our Story</a></li>
             </ul>
           </div>
 
           <div>
             <h4>Shop</h4>
             <ul>
-              <li><a onClick={() => navigate("gift-cards")}>Gift Cards</a></li>
-              <li><a onClick={() => navigate("book")}>Book Online</a></li>
+              <li><a role="button" tabIndex={0} onClick={() => navigate("gift-cards")} onKeyDown={(e) => (e.key==="Enter"||e.key===" ")&&navigate("gift-cards")}>Gift Cards</a></li>
+              <li><a role="button" tabIndex={0} onClick={() => navigate("book")} onKeyDown={(e) => (e.key==="Enter"||e.key===" ")&&navigate("book")}>Book Online</a></li>
             </ul>
           </div>
 
           <div>
             <h4>Help</h4>
             <ul>
-              <li><a onClick={() => navigate("faq")}>FAQ</a></li>
+              <li><a role="button" tabIndex={0} onClick={() => navigate("faq")} onKeyDown={(e) => (e.key==="Enter"||e.key===" ")&&navigate("faq")}>FAQ</a></li>
               <li><a>Cancellation Policy</a></li>
               <li><a>Privacy</a></li>
               <li><a>Terms</a></li>
