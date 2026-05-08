@@ -20,7 +20,7 @@
   --max: 1280px;
 
   --font-display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Barlow", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
