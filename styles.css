@@ -120,7 +120,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   border: 1px solid var(--ink);
 }
 .btn-ghost-dark:hover { background: var(--ink); color: var(--bg); }
-.btn-sm { padding: 10px 16px; font-size: 12px; min-height: 40px; }
+.btn-sm { padding: 11px 16px; font-size: 12px; min-height: 44px; }
 .btn-lg { padding: 18px 28px; font-size: 15px; min-height: 52px; }
 
 /* Header */
@@ -165,7 +165,9 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 }
 @media (min-width: 1000px) { .nav-desktop { display: flex; } }
 .nav-link {
-  padding: 8px 14px;
+  padding: 12px 14px;
+  min-height: 44px;
+  display: inline-flex; align-items: center;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -736,7 +738,7 @@ section { position: relative; }
   margin: 0 0 16px;
 }
 .footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-.footer ul a { color: rgba(244,237,227,0.85); font-size: 14px; cursor: pointer; }
+.footer ul a { color: rgba(244,237,227,0.85); font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; }
 .footer ul a:hover { color: var(--brass); }
 .footer-tagline {
   font-family: var(--font-display); font-size: 36px; line-height: 0.95; letter-spacing: 0.02em;
